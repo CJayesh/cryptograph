@@ -1,0 +1,11 @@
+.controls {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    label {
+        width: 150px;
+    }
+    .mat-radio-button {
+        margin-right: 16px;
+    }
+}

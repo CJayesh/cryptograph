@@ -1,1 +1,26 @@
-<p>crypto-chart works!</p>
+<div class="chart-wrapper">
+    <canvas baseChart
+        [datasets]="chartData" 
+        [labels]="chartLabels" 
+        [options]="chartOptions"
+        [colors]="chartColors" 
+        [legend]="chartLegend" 
+        [chartType]="chartType">
+    </canvas>
+</div>
+<div class="controls">
+    <label>Select Coin: </label>
+    <mat-radio-group (change)="coinSelection($event)">
+        <mat-radio-button *ngFor="let coin of coins" [value]="coin" [checked]="coin === 'BTC'">
+            {{coin}}
+        </mat-radio-button>
+    </mat-radio-group>
+</div>
+<div class="controls">
+    <label>Select Duration: </label>
+    <mat-radio-group (change)="timeSelection($event)">
+        <mat-radio-button *ngFor="let time of times" [value]="time" [checked]="time === 1">
+            {{time}}Hour
+        </mat-radio-button>
+    </mat-radio-group>
+</div>
